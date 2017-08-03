@@ -1,6 +1,13 @@
 pipeline {
     agent { docker 'python:2.7.10' }
     stages {
+        stage ('Start') {
+            steps {
+                slackSend  channel: '#jenkins',
+                    color: 'good',
+                    message: "The pipeline ${currentBuild.fullDisplayName} started."
+            }
+        }
         stage('build') {
             steps {
                 sh 'python --version'
