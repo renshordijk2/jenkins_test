@@ -8,7 +8,7 @@ pipeline {
                     message: "The pipeline ${currentBuild.fullDisplayName} started."
             }
         }
-        stage('build') {
+        stage('Build') {
             steps {
                 sh 'python --version'
             }
