@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             agent any
             when {
-                branch 'master'
+                branch 'master-test'
             }
             steps {
                 ansiblePlaybook(
