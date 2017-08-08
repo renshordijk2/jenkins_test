@@ -24,7 +24,7 @@ pipeline {
             steps {
                 ansiblePlaybook(
                     playbook: 'ansible_test_playbook.yml',
-                    extras: hello_name=Jenkins
+                    extras: '-e hello_name="Jenkins"'
                 )
             }
         }
