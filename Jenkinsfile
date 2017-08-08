@@ -2,7 +2,6 @@
 
 pipeline {
     agent none
-    cleanWs()
     stages {
         stage ('Start') {
             steps {
@@ -31,6 +30,9 @@ pipeline {
         }
     }
     post {
+        always {
+            cleanWs()
+        }
         success {
             slackSend channel: '#jenkins',
                       color: 'good',
