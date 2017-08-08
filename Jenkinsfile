@@ -24,9 +24,9 @@ pipeline {
             steps {
                 ansiblePlaybook(
                     playbook: 'ansible_test_playbook.yml')
-                    extraVars: [
+                    extraVars: (
                         name: 'Jenkins'
-                    ]
+                    )
             }
         }
     }
