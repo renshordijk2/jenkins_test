@@ -26,7 +26,7 @@ pipeline {
                     playbook: 'ansible_test_playbook.yml')
                     extraVars: [
                         name: 'Jenkins'
-                     ]
+                    ]
             }
         }
     }
