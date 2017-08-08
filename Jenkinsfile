@@ -2,6 +2,7 @@
 
 pipeline {
     agent none
+    cleanWs()
     stages {
         stage ('Start') {
             steps {
