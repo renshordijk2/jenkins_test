@@ -13,6 +13,10 @@ pipeline {
                 sh 'python --version'
             }
         }
+        stage('Ansible') {
+            ansiblePlaybook('ansible_test_playbook.yml') {
+            }
+        }
     }
     post {
         success {
