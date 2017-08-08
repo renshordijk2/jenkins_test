@@ -16,8 +16,11 @@ pipeline {
                 sh 'python --version'
             }
         }
-        stage('Ansible') {
+        stage('Deploy') {
             agent any
+            when {
+                BRANCH_NAME 'master'
+            }
             steps {
                 ansiblePlaybook(
                     playbook: 'ansible_test_playbook.yml')
