@@ -23,8 +23,9 @@ pipeline {
             }
             steps {
                 ansiblePlaybook(
-                    playbook: 'ansible_test_playbook.yml'),
+                    playbook: 'ansible_test_playbook.yml',
                     extras: name=Jenkins
+                )
             }
         }
     }
