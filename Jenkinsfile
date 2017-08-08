@@ -15,6 +15,7 @@ pipeline {
             }
         }
         stage('Ansible') {
+            agent { label 'Ansible-agent' }
             steps {
                 ansiblePlaybook(
                     playbook: 'ansible_test_playbook.yml')
