@@ -30,9 +30,6 @@ pipeline {
         }
     }
     post {
-        always {
-            cleanWs()
-        }
         success {
             slackSend channel: '#jenkins',
                       color: 'good',
