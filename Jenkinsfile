@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             agent any
             when {
-                BRANCH_NAME 'master'
+                branch 'master'
             }
             steps {
                 ansiblePlaybook(
