@@ -14,6 +14,7 @@ pipeline {
             }
         }
         stage('Ansible') {
+            agent { docker 'williamyeh/ansible:ubuntu16.04' }
             steps {
                 ansiblePlaybook(
                     playbook: 'ansible_test_playbook.yml')
