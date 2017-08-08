@@ -19,11 +19,14 @@ pipeline {
         stage('Deploy') {
             agent any
             when {
-                branch 'master-test'
+                branch 'master'
             }
             steps {
                 ansiblePlaybook(
                     playbook: 'ansible_test_playbook.yml')
+                    extraVars: [
+                        name: 'Jenkins'
+                     ]
             }
         }
     }
