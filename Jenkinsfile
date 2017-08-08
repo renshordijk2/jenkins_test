@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'python:2.7.10' }
+    agent { none }
     stages {
         stage ('Start') {
             steps {
@@ -9,6 +9,7 @@ pipeline {
             }
         }
         stage('Build') {
+            agent { docker 'python:2.7.10' }
             steps {
                 sh 'python --version'
             }
