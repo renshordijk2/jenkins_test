@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             agent { docker 'python:2.7.10' }
             steps {
-                sh 'python --version'
+                sh 'python main.py'
             }
         }
         stage('Deploy') {
