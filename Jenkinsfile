@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent none
     stages {
@@ -15,7 +17,7 @@ pipeline {
             }
         }
         stage('Ansible') {
-            agent { label 'Ansible-agent' }
+            agent any
             steps {
                 ansiblePlaybook(
                     playbook: 'ansible_test_playbook.yml')
